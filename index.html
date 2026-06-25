@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vavexhype - Accesorios Tecnológicos Premium</title>
+    <title>VAVEXHYPE - Moda Urbana Premium</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,15 +12,15 @@
         <div class="container">
             <div class="logo">
                 <h1>VAVEXHYPE</h1>
-                <p class="tagline">Accesorios Tecnológicos Premium</p>
+                <p class="tagline">Moda Urbana Premium</p>
             </div>
             <nav class="nav">
                 <a href="#inicio" class="nav-link">Inicio</a>
-                <a href="#productos" class="nav-link">Productos</a>
+                <a href="#productos" class="nav-link">Colección</a>
                 <a href="#contacto" class="nav-link">Contacto</a>
                 <div class="cart-icon" onclick="toggleCart()">
                     <span class="cart-count" id="cartCount">0</span>
-                    🛒
+                    🛍️
                 </div>
             </nav>
         </div>
@@ -47,9 +47,9 @@
     <!-- Hero Section -->
     <section class="hero" id="inicio">
         <div class="hero-content">
-            <h2>Lujo y Tecnología</h2>
-            <p>Descubre nuestra colección exclusiva de accesorios tecnológicos premium</p>
-            <button class="cta-btn" onclick="document.getElementById('productos').scrollIntoView()">Ver Colección</button>
+            <h2>ESTILO URBANO</h2>
+            <p>Ropa premium para gente con estilo</p>
+            <button class="cta-btn" onclick="document.getElementById('productos').scrollIntoView()">Explorar Colección</button>
         </div>
     </section>
 
@@ -57,14 +57,14 @@
     <section class="filters-section">
         <div class="container">
             <div class="search-bar">
-                <input type="text" id="searchInput" placeholder="Buscar productos..." onkeyup="filterProducts()">
+                <input type="text" id="searchInput" placeholder="Buscar prendas..." onkeyup="filterProducts()">
             </div>
             <div class="filter-buttons">
-                <button class="filter-btn active" onclick="filterByCategory('all')">Todos</button>
-                <button class="filter-btn" onclick="filterByCategory('afeitadoras')">Afeitadoras</button>
-                <button class="filter-btn" onclick="filterByCategory('fundas')">Fundas</button>
-                <button class="filter-btn" onclick="filterByCategory('cables')">Cables</button>
-                <button class="filter-btn" onclick="filterByCategory('otros')">Otros</button>
+                <button class="filter-btn active" onclick="filterByCategory('all')">Todo</button>
+                <button class="filter-btn" onclick="filterByCategory('camisetas')">Camisetas</button>
+                <button class="filter-btn" onclick="filterByCategory('sudaderas')">Sudaderas</button>
+                <button class="filter-btn" onclick="filterByCategory('pantalones')">Pantalones</button>
+                <button class="filter-btn" onclick="filterByCategory('accesorios')">Accesorios</button>
             </div>
         </div>
     </section>
@@ -72,7 +72,7 @@
     <!-- Productos -->
     <section class="products" id="productos">
         <div class="container">
-            <h2 class="section-title">Nuestros Productos</h2>
+            <h2 class="section-title">Nueva Colección</h2>
             <div class="products-grid" id="productsGrid">
                 <!-- Los productos se cargarán con JavaScript -->
             </div>
@@ -85,20 +85,20 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>VAVEXHYPE</h3>
-                    <p>Accesorios tecnológicos de lujo para tu estilo de vida.</p>
+                    <p>Moda urbana de alta calidad para tu estilo de vida.</p>
                 </div>
                 <div class="footer-section">
                     <h3>Contacto</h3>
-                    <p>📧 info@vavexhype.com</p>
+                    <p>📧 vavexhype@gmail.com</p>
                     <p>📱 +34 642272252</p>
                 </div>
                 <div class="footer-section">
-                    <h3>Redes Sociales</h3>
-                    <p>Instagram | Facebook | Twitter</p>
+                    <h3>Síguenos</h3>
+                    <p>Instagram | TikTok | YouTube</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Vavexhype. Todos los derechos reservados.</p>
+                <p>&copy; 2026 VAVEXHYPE. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
