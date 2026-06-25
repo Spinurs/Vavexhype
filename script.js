@@ -1,16 +1,16 @@
 const products = [
-    { id: 1, name: "Afeitadora Eléctrica Pro", category: "afeitadoras", price: 199.99, description: "Afeitadora premium con tecnología de 5 cuchillas flotantes", emoji: "💈" },
-    { id: 2, name: "Funda iPhone 15 Pro", category: "fundas", price: 79.99, description: "Funda de cuero genuino con protección total", emoji: "📱" },
-    { id: 3, name: "Cable USB-C Premium", category: "cables", price: 49.99, description: "Cable de carga rápida con revestimiento de nylon", emoji: "🔌" },
-    { id: 4, name: "Afeitadora Rotativa Deluxe", category: "afeitadoras", price: 249.99, description: "Sistema de afeitado rotativo de 3 cabezales con sensor", emoji: "💈" },
-    { id: 5, name: "Funda Samsung Galaxy S24", category: "fundas", price: 74.99, description: "Protección elegante con diseño minimalista", emoji: "📱" },
-    { id: 6, name: "Cargador Rápido 65W", category: "otros", price: 89.99, description: "Cargador de pared con tecnología de carga ultrarrápida", emoji: "🔋" },
-    { id: 7, name: "Afeitadora Barba Premium", category: "afeitadoras", price: 159.99, description: "Especializada en recorte de barba con precisión", emoji: "💈" },
-    { id: 8, name: "Funda AirPods Pro", category: "fundas", price: 39.99, description: "Funda protectora con carabina de metal", emoji: "🎧" },
-    { id: 9, name: "Hub USB-C Multifunción", category: "otros", price: 129.99, description: "7 puertos: USB 3.0, HDMI, SD, Ethernet", emoji: "🔗" },
-    { id: 10, name: "Afeitadora Viaje Compacta", category: "afeitadoras", price: 99.99, description: "Diseño portátil perfecto para viajeros", emoji: "✈️" },
-    { id: 11, name: "Funda iPad Premium", category: "fundas", price: 119.99, description: "Funda inteligente con soporte multángulo", emoji: "📲" },
-    { id: 12, name: "Cable Lightning Certificado", category: "cables", price: 44.99, description: "Cable MFi certificado por Apple de 2 metros", emoji: "⚡" }
+    { id: 1, name: "Camiseta Urban Vibes", category: "camisetas", price: 34.99, description: "Algodón 100% premium con estampado exclusivo", emoji: "👕" },
+    { id: 2, name: "Sudadera Oversized Black", category: "sudaderas", price: 64.99, description: "Diseño oversized perfecto para tu estilo", emoji: "🖤" },
+    { id: 3, name: "Pantalón Cargo Street", category: "pantalones", price: 79.99, description: "Estilo cargo con múltiples bolsillos", emoji: "👖" },
+    { id: 4, name: "Hoodie Neon Pink", category: "sudaderas", price: 74.99, description: "Sudadera con capucha en rosa neón vibrante", emoji: "💗" },
+    { id: 5, name: "Camiseta Oversized White", category: "camisetas", price: 39.99, description: "Camiseta blanca básica pero premium", emoji: "⚪" },
+    { id: 6, name: "Gorro Beanie Urban", category: "accesorios", price: 24.99, description: "Gorro minimalista para cualquier outfit", emoji: "🧢" },
+    { id: 7, name: "Chaqueta Denim Vintage", category: "sudaderas", price: 99.99, description: "Chaqueta vaquera con detalles vintage", emoji: "🧥" },
+    { id: 8, name: "Cinturón Street Black", category: "accesorios", price: 29.99, description: "Cinturón de cuero genuino negro", emoji: "⬛" },
+    { id: 9, name: "Pantalón Jogger Tech", category: "pantalones", price: 69.99, description: "Pantalón jogger con tecnología de tela", emoji: "⚡" },
+    { id: 10, name: "Camiseta Tie Dye", category: "camisetas", price: 44.99, description: "Camiseta tie dye multicolor exclusiva", emoji: "🌈" },
+    { id: 11, name: "Mochila Urban Backpack", category: "accesorios", price: 89.99, description: "Mochila con estilo urbano y funcional", emoji: "🎒" },
+    { id: 12, name: "Sudadera Crop Top", category: "sudaderas", price: 54.99, description: "Sudadera corta tendencia 2024", emoji: "💛" }
 ];
 
 let cart = [];
@@ -27,7 +27,7 @@ function renderProducts(productsToRender) {
     productsGrid.innerHTML = '';
 
     if (productsToRender.length === 0) {
-        productsGrid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; padding: 40px;">No se encontraron productos</p>';
+        productsGrid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; padding: 40px; color: white;">No se encontraron prendas</p>';
         return;
     }
 
@@ -58,7 +58,7 @@ function updateFilterButtons() {
     const filterBtns = document.querySelectorAll('.filter-btn');
     filterBtns.forEach(btn => btn.classList.remove('active'));
     const activeBtn = Array.from(filterBtns).find(btn => 
-        btn.textContent.toLowerCase().includes(currentFilter === 'all' ? 'todos' : currentFilter)
+        btn.textContent.toLowerCase().includes(currentFilter === 'all' ? 'todo' : currentFilter)
     );
     if (activeBtn) activeBtn.classList.add('active');
 }
@@ -84,7 +84,7 @@ function addToCart(productId) {
     else { cart.push({...product, quantity: 1}); }
     saveCartToStorage();
     updateCart();
-    showNotification('Producto añadido al carrito');
+    showNotification('¡Prenda añadida al carrito!');
 }
 
 function updateCart() {
@@ -112,7 +112,7 @@ function removeFromCart(productId) {
     cart = cart.filter(item => item.id !== productId);
     saveCartToStorage();
     updateCart();
-    showNotification('Producto eliminado del carrito');
+    showNotification('Prenda eliminada del carrito');
 }
 
 function toggleCart() {
@@ -133,7 +133,7 @@ function loadCartFromStorage() {
 
 function showNotification(message) {
     const notification = document.createElement('div');
-    notification.style.cssText = `position: fixed; top: 20px; right: 20px; background: #d4af37; color: #1a1a1a; padding: 15px 20px; border-radius: 3px; z-index: 2000; font-weight: bold; animation: slideIn 0.3s ease-out;`;
+    notification.style.cssText = `position: fixed; top: 20px; right: 20px; background: linear-gradient(135deg, #ff006e 0%, #ff4081 100%); color: white; padding: 15px 20px; border-radius: 50px; z-index: 2000; font-weight: bold; animation: slideIn 0.3s ease-out; box-shadow: 0 5px 20px rgba(255, 0, 110, 0.4);`;
     notification.textContent = message;
     document.body.appendChild(notification);
     setTimeout(() => {
