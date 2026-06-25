@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vavexhype - Accesorios Tecnológicos Premium</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>VAVEXHYPE</h1>
+                <p class="tagline">Accesorios Tecnológicos Premium</p>
+            </div>
+            <nav class="nav">
+                <a href="#inicio" class="nav-link">Inicio</a>
+                <a href="#productos" class="nav-link">Productos</a>
+                <a href="#contacto" class="nav-link">Contacto</a>
+                <div class="cart-icon" onclick="toggleCart()">
+                    <span class="cart-count" id="cartCount">0</span>
+                    🛒
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Carrito Flotante -->
+    <div class="cart-panel" id="cartPanel">
+        <div class="cart-header">
+            <h2>Mi Carrito</h2>
+            <button class="close-btn" onclick="toggleCart()">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="empty-cart">Tu carrito está vacío</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total:</strong>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button class="checkout-btn">Proceder al Pago</button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h2>Lujo y Tecnología</h2>
+            <p>Descubre nuestra colección exclusiva de accesorios tecnológicos premium</p>
+            <button class="cta-btn" onclick="document.getElementById('productos').scrollIntoView()">Ver Colección</button>
+        </div>
+    </section>
+
+    <!-- Filtros y Búsqueda -->
+    <section class="filters-section">
+        <div class="container">
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Buscar productos..." onkeyup="filterProducts()">
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterByCategory('all')">Todos</button>
+                <button class="filter-btn" onclick="filterByCategory('afeitadoras')">Afeitadoras</button>
+                <button class="filter-btn" onclick="filterByCategory('fundas')">Fundas</button>
+                <button class="filter-btn" onclick="filterByCategory('cables')">Cables</button>
+                <button class="filter-btn" onclick="filterByCategory('otros')">Otros</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Productos -->
+    <section class="products" id="productos">
+        <div class="container">
+            <h2 class="section-title">Nuestros Productos</h2>
+            <div class="products-grid" id="productsGrid">
+                <!-- Los productos se cargarán con JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contacto">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>VAVEXHYPE</h3>
+                    <p>Accesorios tecnológicos de lujo para tu estilo de vida.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p>📧 info@vavexhype.com</p>
+                    <p>📱 +34 XXX XXX XXX</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Redes Sociales</h3>
+                    <p>Instagram | Facebook | Twitter</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Vavexhype. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
